@@ -1,0 +1,48 @@
+<form [formGroup]="formform" (ngSubmit)="onSubmit()" class="example-form" style="margin-top: 30px; margin-left: 30px;">
+      
+      <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" id="nome" formControlName="nome">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Azienda</mat-label>
+        <input matInput type="text" id="azienda" formControlName="azienda">
+      </mat-form-field></td>
+    </tr></table>
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Motivo dell'apertura ticket</mat-label>
+        <textarea matInput placeholder="Spiega il problema riscontrato" type="text" id="motivo" formControlName="motivo"></textarea>
+      </mat-form-field>
+      
+    </p>
+    <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formform.valid">Invia Form</button>
+    </div>
+    
+    
+  </form>
+
+  <div *ngIf="loading" style="margin-top: 20px;">  
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+
+
+
+<div *ngIf="submitted && formform.valid && !loading" style="margin-top: 30px;">
+    <h3>Dati del form</h3>
+    <ul>
+        <li><strong>Nome:</strong> {{datiForm.nome}}</li>
+        <li><strong>Azienda:</strong> {{datiForm.azienda}}</li>
+        <li><strong>Motivo:</strong> {{datiForm.motivo}}</li>
+    </ul>
+    <p>Se vedi il riepilogo dei dati inseriti, il tuo ticket è andato a buon fine.</p>
+   
+</div><br>
+
+
+<router-outlet></router-outlet>
+
+  
+  

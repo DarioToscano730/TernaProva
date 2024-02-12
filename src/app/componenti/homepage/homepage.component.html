@@ -1,0 +1,51 @@
+ <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+<div class="menu" style="display: flex; flex-direction: column; margin-top: 30px;">
+<div class="primo-menu" style="margin-bottom: 10px;">
+<button mat-button [matMenuTriggerFor]="menu1">Aziende</button>
+<mat-menu #menu1="matMenu">
+  <button mat-menu-item routerLink="paginaterna">Terna</button>
+  <button mat-menu-item routerLink="paginacisco">Cisco</button>
+  <button mat-menu-item routerLink="paginasirti">Sirti</button>
+</mat-menu>
+</div>
+<div class="secondo-menu" style="margin-top: 10px; margin-bottom: 10px;">
+  <button mat-button [matMenuTriggerFor]="menu2">Dispositivi</button>
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item routerLink="dispositivi"> Router</button>
+    <button mat-menu-item routerLink="switch"> Switch</button>
+  </mat-menu>
+  </div>
+
+<div class="terzo-menu" style="margin-top: 10px; margin-bottom: 10px;">
+<button mat-button [matMenuTriggerFor]="menu3">Servizio Clienti</button>
+<mat-menu #menu3="matMenu">
+  <button mat-menu-item routerLink="formpage">Apri un ticket</button>
+  <button mat-menu-item routerLink="">Lista Ticket</button>
+</mat-menu>
+</div>
+</div>
+
+          </mat-sidenav>
+          <mat-sidenav-content>
+          <mat-toolbar color="primary">
+            <div class="barra" style="display: flex;">
+              <div class="bottone1" style="margin-right: 10px;">
+                <button mat-raised-button routerLink="login">Logout</button>
+              </div>
+              
+            </div>
+            
+              
+            
+             
+             
+            </mat-toolbar>
+            
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+         
+          
+  </mat-sidenav-container>
+
+  

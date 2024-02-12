@@ -1,0 +1,21 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <img src="/assets/TernaCover.jpg" alt="logo terna">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="/assets/terna.webp" alt="immagine terna">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="/assets/Terna-107494.jpg" alt="terna">
+    </mat-grid-tile>
+    <mat-grid-tile >
+        <h1><strong>Terna</strong></h1>
+        <ul><strong><li *ngFor="let item of dataFromServizioTerna">Indirizzo : {{item.indirizzo}}</li>
+            <li *ngFor="let item of dataFromServizioTerna">Partita Iva : {{item.PartitaIva}}</li>
+            <li *ngFor="let item of dataFromServizioTerna">Amministratore Delegato : {{item.Ceo}}</li>
+            <li *ngFor="let item of dataFromServizioTerna">Ambito : {{item.Ambito}}</li></strong>
+            
+        </ul>
+    </mat-grid-tile>
+  </mat-grid-list>
+  

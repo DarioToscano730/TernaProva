@@ -1,0 +1,21 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <img src="/assets/cisco3.avif" alt="logo terna">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="/assets/cisco1.jpeg" alt="immagine terna">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="/assets/cisco2.jpg" alt="terna" >
+    </mat-grid-tile>
+    <mat-grid-tile >
+        <h1><strong>Cisco</strong></h1>
+        <ul><strong><li *ngFor="let item of dataFromServizioCisco">Indirizzo : {{item.indirizzo}}</li>
+            <li *ngFor="let item of dataFromServizioCisco">Partita Iva : {{item.PartitaIva}}</li>
+            <li *ngFor="let item of dataFromServizioCisco">Amministratore Delegato : {{item.Ceo}}</li>
+            <li *ngFor="let item of dataFromServizioCisco">Ambito : {{item.Ambito}}</li></strong>
+            
+        </ul>
+    </mat-grid-tile>
+  </mat-grid-list>
+  

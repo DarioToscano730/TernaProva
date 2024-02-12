@@ -1,0 +1,43 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()"  class="example-form" style="margin-top: 30px; margin-left: 30px;">
+  <h1>Registrazione</h1>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl"placeholder="Ex. pat@example.com">
+    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+      <mat-error>Inserire un formato email valido</mat-error>
+    }
+    @if (emailFormControl.hasError('required')) {
+      <mat-error>Email è <strong>richiesta</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field class="example-full-width" style="margin-left: 20px;">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [formControl]="passwordFormControl" placeholder="">
+    <ng-container *ngIf="passwordFormControl.hasError('required')">
+      
+    </ng-container>
+    <mat-error>Password è <strong>richiesta</strong></mat-error>
+    <ng-container *ngIf="passwordFormControl.hasError('minlength')">
+      <mat-error>Password deve essere lunga almeno 7 caratteri</mat-error>
+    </ng-container>
+    <ng-container *ngIf="passwordFormControl.hasError('pattern')">
+      <mat-error>Password deve contenere almeno un carattere speciale</mat-error>
+    </ng-container>
+  </mat-form-field>
+  
+  <button mat-button color="primary" style="font-size: large; margin-left: 20px;" [disabled]="!registerForm.valid">Registrazione</button><br>
+  
+</form>
+
+
+<div *ngIf="loading" style="margin-top: 20px;">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div *ngIf="submitted && registerForm.valid && !loading && !error" style="margin-top: 30px;">
+  <h3>Complimenti, la registrazione è andata a buon fine</h3>
+ 
+</div>
+
+
+

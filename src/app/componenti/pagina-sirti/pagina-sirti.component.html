@@ -1,0 +1,21 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <img src="/assets/sirti1.jpg" alt="sirti1">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="/assets/sirti2.jpg" alt="sirti2">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <img src="/assets/sirti3.jpg" alt="sirti3">
+    </mat-grid-tile>
+    <mat-grid-tile >
+        <h1><strong>Sirti</strong></h1>
+        <ul><strong><li *ngFor="let item of dataFromServizioSirti">Indirizzo : {{item.indirizzo}}</li>
+            <li *ngFor="let item of dataFromServizioSirti">Partita Iva : {{item.PartitaIva}}</li>
+            <li *ngFor="let item of dataFromServizioSirti">Amministratore Delegato : {{item.Ceo}}</li>
+            <li *ngFor="let item of dataFromServizioSirti">Ambito : {{item.Ambito}}</li></strong>
+            
+        </ul>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
